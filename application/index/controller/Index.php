@@ -12,5 +12,8 @@ class Index
     {
         return 'hello,' . $name;
     }
-
+    public function list()
+    {
+        return "哈哈哈哈";
+    }
 }

@@ -8,4 +8,9 @@ class Index
         return '</think>';
     }
 
+    public function hello($name = '刘玉冰')
+    {
+        return 'hello,' . $name;
+    }
+
 }

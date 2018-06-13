@@ -5,15 +5,9 @@ class Index
 {
     public function index()
     {
-        return '</think>';
+       echo 'hello，我的易易城！';
     }
 
-    public function hello($name = '刘玉冰')
-    {
-        return 'hello,' . $name;
-    }
-    public function list()
-    {
-        return "哈哈哈哈";
-    }
+
+ 
 }

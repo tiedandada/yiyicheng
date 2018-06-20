@@ -1,11 +1,11 @@
 <?php
 namespace app\index\controller;
-
-class Index
+use think\Controller;
+class Index extends Controller
 {
     public function index()
     {
-       echo 'hello，我的易易城！';
+       return $this->fetch('index');
     }
 
 

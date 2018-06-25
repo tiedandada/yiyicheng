@@ -288,6 +288,7 @@
 				var adminname=$('#adminname').val();
 				var adminpwd=$('#adminpwd').val();
 				$.post('/back/Login/index',{adname:adminname,adpwd:adminpwd},function(data){
+					
 					if (data==true) {
 						window.location.href='/back/index/index';
 					}else{

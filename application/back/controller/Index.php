@@ -11,4 +11,8 @@ class Index extends Base
         return $this->fetch('index',['admin_name'=>$this->admin_name,'dzurl'=>$this->ddurl]);
 
     }
+    public function login(){
+     
+        return $this->fetch('login');
+    }
 }

@@ -22,8 +22,8 @@ class Index extends Base
    
     public function iavig_index(){
       $arr = $this->fetch('index',['arr'=> $this->shopping()]); 
-      print_r($arr);
-      return $arr;
+            return $arr;   
+
 
     }
 }

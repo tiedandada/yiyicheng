@@ -34,7 +34,7 @@
         username=$('#username').val();
         userpsw=$('#userpsw').val();   
        
-        $.post("/index/usera/user_index",{"user_name":username,"user_psd":userpsw},
+        $.post("/index/usera/user_index",{"user_name":username,"user_pwd":userpsw},
             function (data){ 
                 if(data==1){
                     location.href="/index/index/index";
@@ -77,7 +77,7 @@
               	<td width="55">&nbsp;</td>
                 <td>
                 	<span class="fl" style="font-size:24px;">登录</span>
-                    <span class="fr">还没有商城账号，<a href="/index/usera/user_register" style="color:#ff4e00;">立即注册</a></span>
+                    <span class="fr">还没有商城账号，<a href="/index/usera/toregister" style="color:#ff4e00;">立即注册</a></span>
                 </td>
               </tr>
                 

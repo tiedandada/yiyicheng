@@ -49,6 +49,7 @@ class Usera extends Base
         $data['user_pwd']= $request->param('pwd');
         $data['user_email']= $request->param('email');
         $data['user_phone']= $request->param('phone');
+        $data['user_img']=$request->param('img');
 //        print_r($data);
         $selectarr = $this->newuser->selectname()->toArray();
 //        print_r($selectarr);
@@ -62,7 +63,7 @@ class Usera extends Base
               echo $two;
           }
       }
-      if (isset($one)){
+      if (isset($one) && !isset($data)){
           $one=0;
          
 //         print_r($arr);

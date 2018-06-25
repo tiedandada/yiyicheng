@@ -36,7 +36,8 @@
                 userpwd=$('#userpwd').val();
                 useremail=$('#useremail').val();
                 userphone=$('#userphone').val();
-               $.post("/index/usera/user_register",{"name":username,"pwd":userpwd,"email":useremail,"phone":userphone},
+                userimg=$('#userimg').val();
+               $.post("/index/usera/user_register",{"name":username,"pwd":userpwd,"email":useremail,"phone":userphone,"img":userimg},
                 function (data){
                     if(data==1){
                         mas="用户名已被注册";
@@ -93,6 +94,10 @@
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;手机 &nbsp;</td>
                 <td><input type="text" value="" class="l_tel" name="userphone" id="userphone"/></td>
+              </tr>
+                 <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;头像 &nbsp;</td>
+                <td><input type="text" value="" class="l_tel" name="userimg" id="userimg"/></td>
               </tr>
              
               <tr>

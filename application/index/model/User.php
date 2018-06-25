@@ -14,8 +14,7 @@ class User extends Model
     }
     public function insertuser($name){
         $user = new User;
-        $user ->$name;
-        return $user->save();
-         echo $this->_Sql();
+        return $user->save($name);
+//        echo $this->_Sql();
     }
 }

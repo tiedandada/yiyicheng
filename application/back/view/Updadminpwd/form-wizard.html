@@ -70,17 +70,18 @@
 																	
 																</div>
 
-																<div class="form-group has-success">
-																	<label for="inputSuccess" class="col-xs-12 col-sm-3 control-label no-padding-right">确认新密码</label>
+																<div class="form-group has-error">
+																	<label for="inputError" class="col-xs-12 col-sm-3 col-md-3 control-label no-padding-right">确认新密码</label>
 
 																	<div class="col-xs-12 col-sm-5">
 																		<span class="block input-icon input-icon-right">
-																			<input type="text" id="inputSuccess" class="width-100" />
-																			<i class=""></i>
+																			<input type="text" id="quexianpwd" class="width-100" />
+																			<i ></i>
 																		</span>
 																	</div>
 																	
 																</div>
+
 
 																
 																
@@ -379,14 +380,11 @@
 
 													<hr />
 													<div class="row-fluid wizard-actions" style="text-align: center;">
-														<button class="btn btn-prev"  >
-															<i class="icon-arrow-left"></i>
-															取消
-														</button>
+														
 
-														<button class="btn btn-success btn-next" data-last="Finish ">
-															提交
-															<i class="icon-arrow-right icon-on-right"></i>
+														<button class="btn btn-success btn-next" data-last="Finish " onclick="upd()">
+															确定修改
+															<i class=""></i>
 														</button>
 													</div>
 												</div><!-- /widget-main -->
@@ -629,6 +627,19 @@
 				$('#modal-wizard .modal-header').ace_wizard();
 				$('#modal-wizard .wizard-actions .btn[data-dismiss=modal]').removeAttr('disabled');
 			})
+          function upd(){
+          	var yuanpwd=$('#inputWarning').val();
+          	var xianpwd=$('#inputError').val();
+          	var quexianpwd=$('#quexianpwd').val();
+          	// alert(quexianpwd);return false;
+          	$.post('/back/Adminlogin/upd_admin_pwd',{yuanpwd:yuanpwd,xianpwd:xianpwd,quexianpwd:quexianpwd},function(data){
+          		if (data==true) {
+						window.location.href='/back/index/index';
+					}else{
+						alert('修改密码失败！');
+					}
+          	})
+          }
 		</script>
 	
 </body>

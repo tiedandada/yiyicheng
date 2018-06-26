@@ -17,38 +17,44 @@ class GoodsCar extends Controller
       
         $user_id=1;//定义用户id为1  整合时改成 $_SESSIO读取 判断 如果$_SESSIO有读取用户id 如果没有跳转到登录界面进行登录
         $goods_id=Request::param('id');//商品id
-        $num = Request::param('num');//商品数量
-        $data=Db::table('goods')->where('goods_id',$goods_id)->find();
-        $goods_num = Db::table('car')->where(['goods_id'=>$goods_id,'user_id'=>$user_id])->value('goods_num');
-        //加入数量大于库存数量
-        if($num>$data['goods_num']){
-           return 0;
-        } 
-        //如果购物车内有该商品 不进行插入 只增加数量
-        if($goods_num > 0){
-            //更新
-            
-            $res = Db::name('car')
-                ->where('goods_id',$goods_id)
-                ->setInc('goods_num',$num);//setInc/setDec方法自增或自减一个字段的值（ 如不加第二个参数，默认步长为1）
-            
-        }else{
-            //新增
-            $cr = ['user_id' => $user_id,
-                   'goods_id'=>$goods_id,
-                   'goods_num'=>$num
-                   ];
-            $res=Db::name('car')->insert($cr);
-            
-        }
         
-        if($res){
-            return 1; 
-        } else {
-            return 2;  
+            
+            $num = Request::param('num');//商品数量
+            $data=Db::table('goods')->where('goods_id',$goods_id)->find();
+            $goods_num = Db::table('car')->where(['goods_id'=>$goods_id,'user_id'=>$user_id])->value('goods_num');
+
+            //加入数量大于库存数量
+            if($num>$data['goods_num']){
+               return 0;
+            } 
+            //如果购物车内有该商品 不进行插入 只增加数量
+            if($goods_num > 0){
+                //更新
+
+                $res = Db::name('car')
+                    ->where('goods_id',$goods_id)
+                    ->setInc('goods_num',$num);//setInc/setDec方法自增或自减一个字段的值（ 如不加第二个参数，默认步长为1）
+
+            }else{
+                //新增
+                $cr = ['user_id' => $user_id,
+                       'goods_id'=>$goods_id,
+                       'goods_num'=>$num
+                       ];
+                $res=Db::name('car')->insert($cr);
+
+            }
+
+            if($res){
+                return 1; 
+            } else {
+                return 2;  
+            }
+
+         
+            
         }
-     
-      }
+
        
     //查看购物车
     public function buycar(){
@@ -58,11 +64,13 @@ class GoodsCar extends Controller
         $data=Db::table('car')
                 ->join('goods','car.goods_id=goods.goods_id')
                 ->where('user_id',$user_id)
-                ->field('goods.goods_name,goods.goods_price,goods.goods_img,car.goods_num,goods.goods_id')
+                ->field('car.id,goods.goods_name,goods.goods_price,goods.goods_img,car.goods_num,goods.goods_id')
                 ->select();
+//       if(empty($data)){
+//           $this->error('购物车为空','/index/index/index');
+//       }
         $zj=0;
         foreach($data as &$v){
-
             $goods_img_arr = explode(",", $v['goods_img']);
             $v['goods_img']= $goods_img_arr[0];
             $zj+= $v['goods_num']*$v['goods_price'];

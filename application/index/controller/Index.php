@@ -1,29 +1,32 @@
 <?php
 namespace app\index\controller;
 use think\Controller;
-use think\Request;
-use app\index\controller\Iavig_index;
-//use app\index\controller\Base;
-
-class Index extends Base 
+use think\Db;
+class Index extends Controller
 {
     public function index()
     { 
-//        $time= $this->timeshopping()->toArray();
-//        print_r($time);
-//        foreach ($time as $k=>$v){
-//            if($v['goods_time']>'2018-06-14 04:08:04'){
-//                echo 111111111;
-//            }
-//        }
-      return $this->fetch('index',['header'=> $this->header(),'two'=> $this->shoppingtwo()->toArray(),'one'=> $this->shoppingone()->toArray(),'three'=> $this->shoppingthree()->toArray(),'fouraa'=> $this->shoppingfour()->toArray(),'five'=> $this->shoppingfive()->toArray(),'six'=> $this->shoppingsix()->toArray()]);   //往header传值
-     
+      // $data =Db::table('goods')->select(); //查询全部商品
+       $data =Db::table('goods')->where('class_id',1)->select();//根据商品的分类查询该分类下的所有商品
+       
+       //将数组遍历出来  取值 将值中的goods_id根据逗号进行拆分 然后让$v的goods_img字段等于拆分数组的第一个图片
+       foreach($data as &$v){
+
+         $goods_img_arr = explode(",", $v['goods_img']);
+         $v['goods_img']= $goods_img_arr[0];
+         
+        
+         
+  }
+
+       
+       return $this->fetch('index',['aa'=>$data]);
+       
+      
     }
-   
-    public function iavig_index(){
-      $arr = $this->fetch('index',['arr'=> $this->shopping()]); 
-            return $arr;   
+    
+    
 
 
-    }
+ 
 }

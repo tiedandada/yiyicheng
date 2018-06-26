@@ -1,5 +1,5 @@
 <?php
-
+namespace app\index\controller;
 use think\Request;
 use app\index\controller\Iavig_index;
 use think\facade\Session; 

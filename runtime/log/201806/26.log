@@ -20127,3 +20127,381 @@
 [ sql ] [ SQL ] SELECT `car`.`id`,`goods`.`goods_name`,`goods`.`goods_price`,`goods`.`goods_img`,car.goods_num as s,`goods`.`goods_id` FROM `car` INNER JOIN `goods` ON `car`.`goods_id`=`goods`.`goods_id` WHERE  `user_id` = 1 [ RunTime:0.013937s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `address` [ RunTime:0.026516s ]
 [ sql ] [ SQL ] SELECT * FROM `address` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.019265s ]
+---------------------------------------------------------------
+[ 2018-06-26T17:48:33+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.058534s] [吞吐率：17.08req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:49:04+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.039186s] [吞吐率：25.52req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:49:15+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.034669s] [吞吐率：28.84req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:53:24+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.043033s] [吞吐率：23.24req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:53:25+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.062908s] [吞吐率：15.90req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:54:32+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.042993s] [吞吐率：23.26req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:54:33+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.053350s] [吞吐率：18.74req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:54:33+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.046393s] [吞吐率：21.56req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:55:14+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.052752s] [吞吐率：18.96req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:55:16+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.036760s] [吞吐率：27.20req/s] [内存消耗：1,206.34kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:55:59+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.055470s] [吞吐率：18.03req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:00+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.048116s] [吞吐率：20.78req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:00+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.051687s] [吞吐率：19.35req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:01+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.057568s] [吞吐率：17.37req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:01+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.046817s] [吞吐率：21.36req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:01+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.049224s] [吞吐率：20.32req/s] [内存消耗：1,206.36kb] [文件加载：61]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:56:54+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.332191s] [吞吐率：3.01req/s] [内存消耗：1,546.25kb] [文件加载：71]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'app\index\model\Goods' not found[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Base.php:22]
+---------------------------------------------------------------
+[ 2018-06-26T17:57:39+08:00 ] 127.0.0.1 GET www.xinyiyicheng.com/
+[运行时间：0.041983s] [吞吐率：23.82req/s] [内存消耗：1,546.25kb] [文件加载：71]
+[ info ] [ LANG ] F:\phpServer\wwwroot\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.xinyiyicheng.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [0]致命错误: Class 'app\index\model\Goods' not found[F:\phpServer\wwwroot\yiyicheng\application\index\controller\Base.php:22]

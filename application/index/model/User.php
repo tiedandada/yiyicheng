@@ -6,15 +6,19 @@ use think\Model;
 
 class User extends Model
 {
-    public function selectuser(){
-       return User::select();
+    public function selectuser($username){
+       return $user= User::where('user_name', $username)->find();
     }
-    public function selectname(){
-        return User::select();
+    public function selectname($username){
+        return $user = User::where('user_name', $username)->find();
     }
-    public function insertuser($name){
+    public function insertuser($name,$pwd,$email,$phone){
         $user = new User;
-        return $user->save($name);
-//        echo $this->_Sql();
+        $user->user_name = $name;
+        $user->user_pwd = $pwd;
+        $user->user_email = $email;
+        $user->user_phone = $phone;
+        $user->save();
     }
+    
 }

@@ -19,3 +19,13 @@ require __DIR__ . '/../thinkphp/base.php';
 
 // 执行应用并响应
 Container::get('app')->run()->send();
+//session([
+//'prefix' => 'module',
+//'type' => '',
+//'auto_start' => true,
+//]);
+return [
+          'prefix' => 'think',
+          'type' => '',
+          'auto_start' => true,
+          ];

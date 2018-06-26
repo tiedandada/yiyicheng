@@ -4,6 +4,8 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 use app\index\model\User;
+use think\facade\Session;
+use think\Db;
 class Usera extends Base
 { 
     public $newuser;
@@ -12,61 +14,59 @@ class Usera extends Base
         $this->newuser=new User();
     }
     public function user_index(Request $request)
-    {   
-        //登录页面 
+    {    //登录页面 
+        $bades="你好游客";
      if($user=$request->param()){
         $user['user_name']=$request->param('user_name');
-        $user['user_pwd']=$request->param('user_pwd');
-        $data = $this->newuser->selectuser()->toArray();
-        $arr = $data; 
-        //对象转换数组
-        $sum ='';
-        $one='';
-        $zero='';
-        foreach ($arr as $k=>$v){
-        if($v['user_name'] == $user['user_name'] && $v['user_pwd']==$user['user_pwd']){
-            $one=1;
+        $user['user_pwd']=$request->param('user_pwd'); 
+        $data = $this->newuser->selectname($user['user_name']);
+        if(empty($data)){
+            return 0;die;                           //用户名不存在
+        }else if($data['user_name'] == $user['user_name'] && $data['user_pwd']==$user['user_pwd']){
+            return 1;                               //登录成功
+            Session::set('name','thinkphp');
         } else {
-            $zero=0; 
+            return 2;die;                           //用户名或密码不正确 
         }
-        }
-            if($one==1){
-                echo 1;
-            } else {
-                echo 0;
-            } 
      } else {
-         return $this->fetch(); 
+          return $this->fetch('user_index',['bades'=>$bades]);
      }
+    
 }
      public function user_register(Request $request){
-        $data['user_name']= $request->param('name');
-        $data['user_pwd']= $request->param('pwd');
-        $data['user_email']= $request->param('email');
-        $data['user_phone']= $request->param('phone');
-        $data['user_img']=$request->param('img');
-        $selectarr = $this->newuser->selectname()->toArray();
-      $one='';
-      $two='';
-      $three='';
-      $four='';
-      foreach ($selectarr as $k=>$v){
-         if($v['user_name']==$data['user_name']){
-               $two=2;
-          }else {
-              if(isset($data['user_name']) && isset($data['user_email']) && isset($data['user_phone'])){
-               $one=1; 
-              }
-          }
+           $user['name']= $request->param('name');
+           $user['pwd']= $request->param('pwd');
+           $user['email']= $request->param('email');
+           $user['phone']= $request->param('phone');
+           if(!empty($user['name']) && !empty($user['pwd']) && !empty($user['email']) && !empty($user['phone'])){
+         $this->newuser->insertuser($user['name'],$user['pwd'],$user['email'],$user['phone']);
+         return 5;
         }
-        if($two==2){
-            echo 2;
-        } else {
-            echo 1;
+        if(empty($user['name'])){
+            return 3;die;
         }
-      $this->toregister();
+        $selectarr = $this->newuser->selectname($user['name']);
+        if(empty($selectarr)){
+            return 1;
+         }else{
+            return 0;die;
+        }
+        $this->toregister();
     }
     public function toregister(){
-           return $this->fetch("/usera/user_register");
+        return $this->fetch("/usera/user_register");
+    }
+    public function user_stutes(Request $request){
+        $data=$request->param();
+        print_r($data['username']);
+//        $userid=1;
+//        Db::table('user')->where('user_id',$userid)->update([ 'user_name' => $data['username'],
+//                      'user_pwd'=>$data['userpwd']
+//            ]);
+        $this->touser_stutes();
+         
+    }
+    public function touser_stutes(){
+        return $this->fetch('user_stutes');
     }
 }

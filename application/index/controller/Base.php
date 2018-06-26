@@ -7,17 +7,25 @@ use think\Request;
 use app\index\model\User;
 use app\index\model\Category;
 use app\index\model\Goods;
+use think\facade\Session;
 class Base extends Controller
 { 
     public $newuser;
      public $category;
      public $headerDate;
      public $goods;
+     public $bades;
     public function __construct(\think\App $app = null) {               //全部实例化
         parent::__construct($app);
         $this->newuser=new User();
         $this->category = new Category(); 
         $this->goods = new Goods();
+//            return [
+//          'prefix' => 'think',
+//          'type' => '',
+//          'auto_start' => true,
+//          ];
+            
     }
    
     public function header(){

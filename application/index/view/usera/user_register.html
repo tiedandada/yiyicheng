@@ -1,0 +1,162 @@
+{layout name="user_login_layout" /}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="/front/css/style.css" />
+    <!--[if IE 6]>
+    <script src="js/iepng.js" type="text/javascript"></script>
+        <script type="text/javascript">
+           EvPNG.fix('div, ul, img, li, input, a'); 
+        </script>
+    <![endif]-->    
+    <script type="text/javascript" src="/front/js/jquery-1.11.1.min_044d0927.js"></script>
+	<script type="text/javascript" src="/front/js/jquery.bxslider_e88acd1b.js"></script>
+    
+    <script type="text/javascript" src="/front/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/front/js/menu.js"></script>    
+        
+	<script type="text/javascript" src="/front/js/select.js"></script>
+    
+	<script type="text/javascript" src="/front/js/lrscroll.js"></script>
+    
+    <script type="text/javascript" src="/front/js/iban.js"></script>
+    <script type="text/javascript" src="/front/js/fban.js"></script>
+    <script type="text/javascript" src="/front/js/f_ban.js"></script>
+    <script type="text/javascript" src="/front/js/mban.js"></script>
+    <script type="text/javascript" src="/front/js/bban.js"></script>
+    <script type="text/javascript" src="/front/js/hban.js"></script>
+    <script type="text/javascript" src="/front/js/tban.js"></script>
+    
+	<script type="text/javascript" src="/front/js/lrscroll_1.js"></script>
+        <script src="/front/js/jquery-3.3.1.min.js"></script>
+        <script>
+            function nameone(){
+                username=$('#username').val();
+                $.post("/index/usera/user_register",{name:username},
+                function (data){
+                    if(data==0){
+                        mas="用户名已被注册";
+                    }else if(data==3){
+                        mas="用户名不能为空";
+                    }
+                } ); $('#mas').html(mas);
+               
+            }
+            function pwdtwo(){
+                userpwd=$('#userpwd').val();
+              if(!userpwd){
+                  acc="密码不能为空";
+              }
+              $('#acc').html(acc);
+            }
+            function emailthree(){
+                useremail=$('#useremail').val();
+               if(!useremail){
+                   ema="邮件不能为空";
+               }
+                ;$('#ema').html(ema);
+            }
+            function phofour(){
+                userphone=$('#userphone').val();
+                 if(!userphone){
+                     pho="手机号不能为空";
+                 }
+                 ;$('#pho').val(pho);
+            }
+            function Regist(){
+                username=$('#username').val();
+                userpwd=$('#userpwd').val();
+                useremail=$('#useremail').val();
+                userphone=$('#userphone').val();
+                userimg=$('#userimg').val();
+               $.post("/index/usera/user_register",{"name":username,"pwd":userpwd,"email":useremail,"phone":userphone,"img":userimg},
+                function (data){
+                    if(data==5){
+                       location.href="/index/index/index";
+                    }    
+                })
+    }
+        </script>
+<title>尤洪</title>
+</head>
+<body>  
+<!--Begin Header Begin-->
+<div class="soubg">
+	<div class="sou">
+        <span class="fr">
+        	<span class="fl">你好，请<a href="/index/usera/user_index">登录</a>&nbsp; <a href="/index/usera/toregister" style="color:#ff4e00;">免费注册</a>&nbsp; </span>
+            <span class="fl">|&nbsp;关注我们：</span>
+            <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
+            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/front/images/s_tel.png" align="absmiddle" /></a></span>
+        </span>
+    </div>
+</div>
+<!--End Header End--> 
+<!--Begin Login Begin-->
+<div class="log_bg">	
+    <div class="top">
+        <div class="logo"><a href="Index.html"><img src="/front/images/logo.png" /></a></div>
+    </div>
+	<div class="regist">
+    	<div class="log_img"><img src="/front/images/l_img.png" width="611" height="425" /></div>
+		<div class="reg_c">
+                    <form method="post">
+            <table border="0" style="width:420px; font-size:14px; margin-top:20px;" cellspacing="0" cellpadding="0">
+              <tr height="50" valign="top">
+              	<td width="95">&nbsp;</td>
+                <td>
+                	<span class="fl" style="font-size:24px;">注册</span>
+                    <span class="fr">已有商城账号，<a href="/index/usera/user_index" style="color:#ff4e00;">我要登录</a></span>
+                </td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;用户名 &nbsp;</td>
+                <td><input type="text" value="" class="l_user" name="username" id="username" onblur='nameone()'/><span id="mas"></span></td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;密码 &nbsp;</td>
+                <td><input type="password" value="" class="l_pwd" name="userpwd" id="userpwd" onblur='pwdtwo()'/><span id="acc"></span></td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;邮箱 &nbsp;</td>
+                <td><input type="text" value="" class="l_email" name="useremail" id="useremail" onblur='emailthree()'/><span id="ema"></span></td>
+              </tr>
+              <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;手机 &nbsp;</td>
+                <td><input type="text" value="" class="l_tel" name="userphone" id="userphone"  onblur='phofour()'/><span id="pho"></span></td>
+              </tr>
+                 <tr height="50">
+                <td align="right"><font color="#ff4e00">*</font>&nbsp;头像 &nbsp;</td>
+                <td><input type="file" value=""name="userimg" id="userimg" /></td>
+              </tr>
+             
+              <tr>
+              	<td>&nbsp;</td>
+                <td style="font-size:12px; padding-top:20px;">
+                	<span style="font-family:'宋体';" class="fl">
+                    	<label class="r_rad"><input type="checkbox" /></label><label class="r_txt">我已阅读并接受《用户协议》</label>
+                    </span>
+                </td>
+              </tr>
+              <tr height="60">
+              	<td>&nbsp;</td>
+                <td><input type="button" value="立即注册" class="log_btn"  onblur='Regist()'/></td>
+              </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+<!--End Login End--> 
+<!--Begin Footer Begin-->
+
+<!--End Footer End -->    
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>

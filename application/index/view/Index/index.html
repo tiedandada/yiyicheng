@@ -76,33 +76,52 @@
                 <span class="fr">16R</span>
             </div>
         </div>
-        
-        <div class="hot_pro">  
+        <div class="hot_pro">        	
         	<div id="featureContainer">
                 <div id="feature">
                     <div id="block">
                         <div id="botton-scroll">
                             <ul class="featureUL">
-                                {foreach $aa as $k=>$vo}
                                 <li class="featureBox">
                                     <div class="box">
-                               	<div class="h_icon"><img src="/front/images/hot.png" width="50" height="50" /></div>
+                                    	<div class="h_icon"><img src="/front/images/hot.png" width="50" height="50" /></div>
                                         <div class="imgbg">
-                                        	<a href="/index/goods/goods_details/id/{$vo.goods_id}"> <img src="{$vo.goods_img}" width="160" height="136" /> </a>
+                                        	<a href="#"><img src="/front/images/hot1.jpg" width="160" height="136" /></a>
                                         </div>                                        
                                         <div class="name">
-                                            <a href="/index/goods/goods_details/id/{$vo.goods_id}">
-                                            <h2>{$vo.goods_name}</h2>
+                                        	<a href="#">
+                                            <h2>德国进口</h2>
+                                            德亚全脂纯牛奶200ml*48盒
                                             </a>
                                         </div>
                                         <div class="price">
-                                            <font>￥<span>{$vo.goods_price}</span></font>
+                                            <font>￥<span>189</span></font> &nbsp; 26R
                                         </div>
-
-                                        
                                     </div>
                                 </li>
-                                {/foreach}
+                                <li class="featureBox">
+                                    <div class="box">
+                                        <div class="h_icon"><img src="/front/images/hot.png" width="50" height="50" /></div>
+                                        <div class="imgbg">
+                                        	<a href="#"><img src="/front/images/hot2.jpg" width="160" height="136" /></a>
+                                        </div>                                        
+                                        <div class="name">
+                                        	<a href="#">
+                                            <h2>iphone 6S</h2>
+                                            Apple/苹果 iPhone 6s Plus公开版
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <font>￥<span>5288</span></font> &nbsp; 25R
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="featureBox">
+                                    <div class="box">
+                                        <div class="h_icon"><img src="/front/images/hot.png" width="50" height="50" /></div>
+                                        <div class="imgbg">
+                                        	<a href="#"><img src="/front/images/hot3.jpg" width="160" height="136" /></a>
+                                        </div>                                        
                                         <div class="name">
                                         	<a href="#">
                                             <h2>倩碧特惠组合套装</h2>
@@ -113,8 +132,24 @@
                                             <font>￥<span>368</span></font> &nbsp; 18R
                                         </div>
                                     </div>
-                                </li>-->
-
+                                </li>
+                                <li class="featureBox">
+                                    <div class="box">
+                                        <div class="h_icon"><img src="/front/images/hot.png" width="50" height="50" /></div>
+                                        <div class="imgbg">
+                                        	<a href="#"><img src="/front/images/hot4.jpg" width="160" height="136" /></a>
+                                        </div>                                        
+                                        <div class="name">
+                                        	<a href="#">
+                                            <h2>品利特级橄榄油</h2>
+                                            750ml*4瓶装组合 西班牙原装进口
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <font>￥<span>280</span></font> &nbsp; 30R
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -198,6 +233,10 @@
     </div>
 	<!--Begin 进口 生鲜 Begin-->
     <div class="i_t mar_10">
+<<<<<<< HEAD
+=======
+        
+>>>>>>> dev
     	<span class="floor_num">1F</span>
     	<span class="fl">进口 <b>·</b> 生鲜</span>                
         <span class="i_mores fr"><a href="#">进口咖啡</a>&nbsp; &nbsp; &nbsp; <a href="#">进口酒</a>&nbsp; &nbsp; &nbsp; <a href="#">进口母婴</a>&nbsp; &nbsp; &nbsp; <a href="#">新鲜蔬菜</a>&nbsp; &nbsp; &nbsp; <a href="#">新鲜水果</a></span>
@@ -221,6 +260,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="fresh_mid">
         	<ul>
             	<li>
@@ -266,6 +306,22 @@
                     <div class="img"><a href="#"><img src="/front/images/fre_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+        
+        <div class="fresh_mid">
+            {foreach $one as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>
@@ -301,6 +357,7 @@
             </div>
         </div>
         <div class="fresh_mid">
+<<<<<<< HEAD
         	<ul>
             	<li>
                 	<div class="name"><a href="#">莫斯利安酸奶</a></div>
@@ -345,6 +402,20 @@
                     <div class="img"><a href="#"><img src="/front/images/food_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+            {foreach $two as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>
@@ -380,6 +451,7 @@
             </div>
         </div>
         <div class="fresh_mid">
+<<<<<<< HEAD
         	<ul>
             	<li>
                 	<div class="name"><a href="#">美宝莲粉饼</a></div>
@@ -424,6 +496,20 @@
                     <div class="img"><a href="#"><img src="/front/images/make_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+        	{foreach $three as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>
@@ -462,6 +548,7 @@
             </div>
         </div>
         <div class="fresh_mid">
+<<<<<<< HEAD
         	<ul>
             	<li>
                 	<div class="name"><a href="#">儿童玩具  变形金刚</a></div>
@@ -506,6 +593,20 @@
                     <div class="img"><a href="#"><img src="/front/images/baby_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+        	{foreach $fouraa as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>
@@ -541,6 +642,7 @@
             </div>
         </div>
         <div class="fresh_mid">
+<<<<<<< HEAD
         	<ul>
             	<li>
                 	<div class="name"><a href="#">品质蓝色沙发</a></div>
@@ -585,6 +687,20 @@
                     <div class="img"><a href="#"><img src="/front/images/home_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+        	{foreach $five as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>
@@ -620,6 +736,7 @@
             </div>
         </div>
         <div class="fresh_mid">
+<<<<<<< HEAD
         	<ul>
             	<li>
                 	<div class="name"><a href="#">乐视高清电视</a></div>
@@ -664,6 +781,20 @@
                     <div class="img"><a href="#"><img src="/front/images/tel_6.jpg" width="185" height="155" /></a></div>
                 </li>
             </ul>
+=======
+        	{foreach $six as $keyarr => $voarr}
+        	<ul>
+            	<li>
+                	<div class="name"><a href="#">{$voarr.goods_name}</a></div>
+                    <div class="price">
+                    	<font>￥<span>{$voarr.goods_price}</span></font> &nbsp; 26R
+                    </div>
+                    <div class="img"><a href="#"><img src="{$voarr.goods_img}" width="185" height="155" /></a></div>
+                </li>
+               </ul>
+              
+        {/foreach}
+>>>>>>> dev
         </div>
         <div class="fresh_right">
         	<ul>

@@ -1,28 +1,20 @@
 <?php
-namespace app\index\controller;
-use think\Controller;
-use think\Db;
-class Index extends Controller
+
+use think\Request;
+use app\index\controller\Iavig_index;
+use think\facade\Session; 
+class Index extends Base 
 {
     public function index()
-    { 
-      // $data =Db::table('goods')->select(); //查询全部商品
-       $data =Db::table('goods')->where('class_id',1)->select();//根据商品的分类查询该分类下的所有商品
-       
-       //将数组遍历出来  取值 将值中的goods_id根据逗号进行拆分 然后让$v的goods_img字段等于拆分数组的第一个图片
-       foreach($data as &$v){
-
-         $goods_img_arr = explode(",", $v['goods_img']);
-         $v['goods_img']= $goods_img_arr[0];
          
-        
-         
-  }
+    {
+        if(Session::has('user_name')){
+        $bades="您好游客,请登录";
+    } else {
+        $bades="你好".Session::get('name');
+    }
+      return $this->fetch('index',['header'=> $this->header(),'two'=> $this->shoppingtwo()->toArray(),'one'=> $this->shoppingone()->toArray(),'three'=> $this->shoppingthree()->toArray(),'fouraa'=> $this->shoppingfour()->toArray(),'five'=> $this->shoppingfive()->toArray(),'six'=> $this->shoppingsix()->toArray(),'bades'=>$bades]);   //往header传值
 
-       
-       return $this->fetch('index',['aa'=>$data]);
-       
-      
     }
     
     

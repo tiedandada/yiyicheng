@@ -5,12 +5,16 @@ namespace app\back\controller;
 use think\Controller;
 use think\facade\Request;
 use app\back\model\Admin;
-class Login extends Base
+use think\facade\Session;
+class Login extends Controller
 {   
-	public $cadmin;
+	  public $admin_name;
 	function __construct(\think\App $app=null){
 		parent::__construct($app);
-		$this->cadmin=new Admin;
+		$cadmin;
+        $this->cadmin=new Admin;
+        
+        $this->admin_name=Session::get('admin_name');
 	}
     function index(){
     	
@@ -18,8 +22,9 @@ class Login extends Base
         $adminpwd=Request::param('adpwd');
         return $this->cadmin->duanadmin($adname,$adminpwd);
     }
-    function upd_admin_pwd(){
-
-    	return $this->fetch('form-wizard',['admin_name'=>$this->admin_name]);
+    
+    function loginout(){
+        Session::delete('admin_name');
+        return $this->fetch('Index/login');
     }
 }

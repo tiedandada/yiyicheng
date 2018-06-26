@@ -20127,3 +20127,129 @@
 [ sql ] [ SQL ] SELECT `car`.`id`,`goods`.`goods_name`,`goods`.`goods_price`,`goods`.`goods_img`,car.goods_num as s,`goods`.`goods_id` FROM `car` INNER JOIN `goods` ON `car`.`goods_id`=`goods`.`goods_id` WHERE  `user_id` = 1 [ RunTime:0.013937s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `address` [ RunTime:0.026516s ]
 [ sql ] [ SQL ] SELECT * FROM `address` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.019265s ]
+---------------------------------------------------------------
+[ 2018-06-26T17:44:26+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.025000s] [吞吐率：40.00req/s] [内存消耗：1,207.52kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=o0h9au32kq0j2j73lqbntplemc',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T17:47:23+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.029000s] [吞吐率：34.48req/s] [内存消耗：1,207.50kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T18:27:54+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.028000s] [吞吐率：35.71req/s] [内存消耗：1,207.50kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T18:27:54+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.024000s] [吞吐率：41.67req/s] [内存消耗：1,207.50kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T18:28:40+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.029000s] [吞吐率：34.48req/s] [内存消耗：1,207.50kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]
+---------------------------------------------------------------
+[ 2018-06-26T18:28:40+08:00 ] 127.0.0.1 GET www.shopping.com/
+[运行时间：0.024000s] [吞吐率：41.67req/s] [内存消耗：1,207.50kb] [文件加载：61]
+[ info ] [ LANG ] D:\phpServer\wwwroot\default\yiyicheng\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.shopping.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8192]Methods with the same name as their class will not be constructors in a future version of PHP; Index has a deprecated constructor[D:\phpServer\wwwroot\default\yiyicheng\application\index\controller\Index.php:6]

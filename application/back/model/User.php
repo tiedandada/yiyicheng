@@ -8,9 +8,12 @@ class User extends Model
 {
     function seleuser(){
     	
-    	$count['user_count']=$this->select()->count('user_name');
-        // $a=Db::table('comment')
-        $a=$this->jion('user','user.user_id=comment.user_id')->select()->count('comment_con');
-        dump($a);
+    	return $this->select()->count('user_name');
+        
+       
+    }
+    function selecomment(){
+    	return $this->join('comment','user.user_id=comment.user_id')->select()->count('comment.comment_id');
+       
     }
 }

@@ -32,10 +32,17 @@
         <script>
             function stutespwd(){
             username=$('#username').val();
-            $.post('/index/usera/user_stutes',{username:username},
+            userpwd=$('#userpwd').val();
+            $.post('/index/usera/user_stutes',{username:username,userpwd:userpwd},
             function(data){
-                alert(data);
+                if(data==1){
+                    mas="用户名不存在";
+                }else{
+                    alert("修改成功");
+                }
+                location.href="/index/usera/user_index";
             });
+            $('#mas').html(mas);
         }
         </script>
     
@@ -57,7 +64,7 @@
 <!--Begin Login Begin-->
 <div class="log_bg">	
     <div class="top">
-        <div class="logo"><a href="Index.html"><img src="/front/images/logo.png" /></a></div>
+        <div class="logo"><a href="/index/index/index"><img src="/front/images/logo.png" /></a></div>
     </div>
 	<div class="login">
     	<div class="log_img"><img src="/front/images/l_img.png" width="611" height="425" /></div>
@@ -70,21 +77,22 @@
                 	<span class="fl" style="font-size:24px;">修改密码</span>
                     <span class="fr">还没有商城账号，<a href="Regist.html" style="color:#ff4e00;">立即注册</a></span>
                 </td>
+                
               </tr>
               <tr height="70">
                 <td>用户名</td>
-                <td><input type="text" value="" class="l_user" name="username" id="username" /></td>
+                <td><input type="text" value="" class="l_user" name="username" id="username" /><span id="mas"></span></td>
               </tr>
               <tr height="70">
-                <td>密&nbsp; &nbsp; 码</td>
+                <td>新密码</td>
                 <td><input type="password" value="" class="l_pwd" name="userpwd" id="userpwd"/></td>
-              </tr>
+              
               <tr>
               	<td>&nbsp;</td>
               </tr>
               <tr height="60">
               	<td>&nbsp;</td>
-                <td><input type="submit" value="修改" class="log_btn" onclick="stuespwd()"/></td>
+                <td><input type="button" value="修改" class="log_btn" onclick="stutespwd()"/></td>
               </tr>
             </table>
             </form>

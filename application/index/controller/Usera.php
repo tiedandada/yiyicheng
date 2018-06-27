@@ -19,16 +19,18 @@ class Usera extends Base
      if($user=$request->param()){
         $user['user_name']=$request->param('user_name');
         $user['user_pwd']=$request->param('user_pwd'); 
-        $data = $this->newuser->selectname($user['user_name']);
+        $data = $this->newuser->selectname($user['user_name'])->toArray();
+//        print_r($data);
         if(empty($data)){
             return 0;die;                           //用户名不存在
-        }else if($data['user_name'] == $user['user_name'] && $data['user_pwd']==$user['user_pwd']){
-            return 1;                               //登录成功
-            Session::set('name','thinkphp');
+        }else if($data['user_pwd']==$user['user_pwd']){
+          $bades= Session::set('name',$user['user_name']);                                //登录成功
+          return 2; 
         } else {
-            return 2;die;                           //用户名或密码不正确 
+            return 1;die;                           //用户名或密码不正确 
         }
      } else {
+         $bades="你好游客";
           return $this->fetch('user_index',['bades'=>$bades]);
      }
     
@@ -58,15 +60,31 @@ class Usera extends Base
     }
     public function user_stutes(Request $request){
         $data=$request->param();
-        print_r($data['username']);
-//        $userid=1;
-//        Db::table('user')->where('user_id',$userid)->update([ 'user_name' => $data['username'],
-//                      'user_pwd'=>$data['userpwd']
-//            ]);
-        $this->touser_stutes();
+        $name=$this->newuser->selectname($data['username']);
+        $arrname=$data['username'];
+        $arr=$data['userpwd'];                    //更新
+        
+//        echo $arr;
+        if (empty($name['user_name'])){
+            return 1;
+        } else  if(!empty ($data['userpwd'])){
+            $name->user_pwd=$arr;
+            $name->save();
+            return 0;
+       
+        }      
+//         $user = User::get(1);
+//                $user->user_name = 'thinkphp';
+//                $user->save();
+//                $gag= Db::table('user')->update(['user_name'=>$data['usesrname'],'user_pwd'=>$data['userpwd']]); 
+//                dump($gag);
+            
+        
+          $this->touser_stutes('user_stutes',['arr'=>$arr]);
          
     }
     public function touser_stutes(){
+        
         return $this->fetch('user_stutes');
     }
 }

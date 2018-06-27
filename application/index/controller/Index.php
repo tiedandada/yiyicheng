@@ -8,7 +8,7 @@ class Index extends Base
     public function index()
          
     {
-        if(Session::has('user_name')){
+        if(empty(Session::has('user_name'))){
         $bades="您好游客,请登录";
     } else {
         $bades="你好".Session::get('name');

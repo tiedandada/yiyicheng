@@ -1,6 +1,4 @@
 /nbproject/private/
-<<<<<<< HEAD
-/vendor/
-=======
-/runtime/temp
->>>>>>> dev
+/runtime/temp/
+/runtime/log/
+/runtime/cache/

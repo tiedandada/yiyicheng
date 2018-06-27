@@ -31,26 +31,52 @@
 	<script type="text/javascript" src="/front/js/lrscroll_1.js"></script>
         <script src="/front/js/jquery-3.3.1.min.js"></script>
         <script>
+            function nameone(){
+                username=$('#username').val();
+                $.post("/index/usera/user_register",{name:username},
+                function (data){
+                    if(data==0){
+                        mas="用户名已被注册";
+                    }else if(data==3){
+                        mas="用户名不能为空";
+                    }
+                } ); $('#mas').html(mas);
+               
+            }
+            function pwdtwo(){
+                userpwd=$('#userpwd').val();
+              if(!userpwd){
+                  acc="密码不能为空";
+              }
+              $('#acc').html(acc);
+            }
+            function emailthree(){
+                useremail=$('#useremail').val();
+               if(!useremail){
+                   ema="邮件不能为空";
+               }
+                ;$('#ema').html(ema);
+            }
+            function phofour(){
+                userphone=$('#userphone').val();
+                 if(!userphone){
+                     pho="手机号不能为空";
+                 }
+                 ;$('#pho').val(pho);
+            }
             function Regist(){
                 username=$('#username').val();
                 userpwd=$('#userpwd').val();
-                
                 useremail=$('#useremail').val();
                 userphone=$('#userphone').val();
                 userimg=$('#userimg').val();
                $.post("/index/usera/user_register",{"name":username,"pwd":userpwd,"email":useremail,"phone":userphone,"img":userimg},
                 function (data){
-                    if(data==1){
+                    if(data==5){
                        location.href="/index/index/index";
-                    }else {
-                        mas="用户名已被注册";
-                    }
-                    
-                }
-        ) ;
-             $('#mas').html(mas);
-             $('#acc').html(acc);
-        }
+                    }    
+                })
+    }
         </script>
 <title>尤洪</title>
 </head>
@@ -86,23 +112,23 @@
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;用户名 &nbsp;</td>
-                <td><input type="text" value="" class="l_user" name="username" id="username" onblur='Regist()'/><span id="mas"></span></td>
+                <td><input type="text" value="" class="l_user" name="username" id="username" onblur='nameone()'/><span id="mas"></span></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;密码 &nbsp;</td>
-                <td><input type="password" value="" class="l_pwd" name="userpwd" id="userpwd" /></td>
+                <td><input type="password" value="" class="l_pwd" name="userpwd" id="userpwd" onblur='pwdtwo()'/><span id="acc"></span></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;邮箱 &nbsp;</td>
-                <td><input type="text" value="格式：1850564889@qq.com" class="l_email" name="useremail" id="useremail" /></td>
+                <td><input type="text" value="" class="l_email" name="useremail" id="useremail" onblur='emailthree()'/><span id="ema"></span></td>
               </tr>
               <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;手机 &nbsp;</td>
-                <td><input type="text" value="请输入数字" class="l_tel" name="userphone" id="userphone" /><span id="acc"></span></td>
+                <td><input type="text" value="" class="l_tel" name="userphone" id="userphone"  onblur='phofour()'/><span id="pho"></span></td>
               </tr>
                  <tr height="50">
                 <td align="right"><font color="#ff4e00">*</font>&nbsp;头像 &nbsp;</td>
-                <td><input type="file" value=""name="userimg" id="userimg"/></td>
+                <td><input type="file" value=""name="userimg" id="userimg" /></td>
               </tr>
              
               <tr>
@@ -115,7 +141,7 @@
               </tr>
               <tr height="60">
               	<td>&nbsp;</td>
-                <td><input type="button" value="立即注册" class="log_btn" onclick='Regist()'/></td>
+                <td><input type="button" value="立即注册" class="log_btn"  onblur='Regist()'/></td>
               </tr>
             </table>
             </form>

@@ -171,12 +171,12 @@
 								//editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
 							}
 						},
-						{name:'order_sn',index:'id', width:70, sorttype:"int", editable: true},
-						{name:'link_phone',index:'sdate',width:90, editable:true, sorttype:"date",unformat: pickDate},
-						{name:'order_money',index:'name', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
-						{name:'user_name',index:'stock', width:70, editable: true,edittype:"checkbox",editoptions: {value:"发货:未发"},unformat: aceSwitch},
-						{name:'link_man',index:'ship', width:90, editable: true,edittype:"select",editoptions:{value:"FE:FedEx;IN:InTime;TN:TNT;AR:ARAMEX"}},
-						{name:'add_time',index:'note', width:150, sortable:false,editable: true,editype:"textarea", editoptions:{rows:"2",cols:"10"}} 
+						{name:'order_sn',index:'order_sn', width:70, sorttype:"int", editable: true,key:true},
+						{name:'link_phone',index:'link_phone',width:90, editable:true, sorttype:"date",unformat: pickDate},
+						{name:'order_money',index:'order_money', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
+						{name:'user_name',index:'user_name', width:70, editable: true,edittype:"checkbox",editoptions: {value:"发货:未发"},unformat: aceSwitch},
+						{name:'link_man',index:'link_man', width:90, editable: true,edittype:"select",editoptions:{value:"FE:FedEx;IN:InTime;TN:TNT;AR:ARAMEX"}},
+						{name:'add_time',index:'add_time', width:150, sortable:false,editable: true,editype:"textarea", editoptions:{rows:"2",cols:"10"}} 
 					], 
 			
 					viewrecords : true,
@@ -201,7 +201,7 @@
 						}, 0);
 					},
 			
-					editurl: $path_base+"/dummy.html",//nothing is saved
+					editurl: "/back/Order/upd_order_status",//nothing is saved
 					caption: "待发货订单",
 			
 			

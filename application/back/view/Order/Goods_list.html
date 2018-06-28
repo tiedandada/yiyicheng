@@ -115,7 +115,7 @@
 		<!--[if !IE]> -->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			window.jQuery || document.write("<script src='/back/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- <![endif]-->
@@ -127,7 +127,7 @@
 <![endif]-->
 
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+			if("ontouchend" in document) document.write("<script src='/back/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
 		<script src="/back/assets/js/bootstrap.min.js"></script>
 		<script src="/back/assets/js/typeahead-bs2.min.js"></script>
@@ -171,12 +171,12 @@
 								//editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
 							}
 						},
-						{name:'order_sn',index:'id', width:70, sorttype:"int", editable: true},
-						{name:'link_phone',index:'sdate',width:90, editable:true, sorttype:"date",unformat: pickDate},
-						{name:'order_money',index:'name', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
-						{name:'user_name',index:'stock', width:70, editable: true,edittype:"checkbox",editoptions: {value:"Yes:No"},unformat: aceSwitch},
-						{name:'link_man',index:'ship', width:90, editable: true,edittype:"select",editoptions:{value:"FE:FedEx;IN:InTime;TN:TNT;AR:ARAMEX"}},
-						{name:'add_time',index:'note', width:150, sortable:false,editable: true,editype:"textarea", editoptions:{rows:"2",cols:"10"}} 
+						{name:'order_sn',index:'order_sn', width:70, sorttype:"int", editable: true,key:true},
+						{name:'link_phone',index:'link_phone',width:90, editable:true, sorttype:"date",unformat: pickDate},
+						{name:'order_money',index:'order_money', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
+						{name:'user_name',index:'user_name', width:70, editable: true,edittype:"checkbox",editoptions: {value:"Yes:No"},unformat: aceSwitch},
+						{name:'link_man',index:'link_man', width:90, editable: true,edittype:"select",editoptions:{value:"FE:FedEx;IN:InTime;TN:TNT;AR:ARAMEX"}},
+						{name:'add_time',index:'add_time', width:150, sortable:false,editable: true,editype:"textarea", editoptions:{rows:"2",cols:"10"}} 
 					], 
 			
 					viewrecords : true,
@@ -193,6 +193,7 @@
 					loadComplete : function() {
 						var table = this;
 						setTimeout(function(){
+
 							styleCheckbox(table);
 							
 							updateActionIcons(table);
@@ -201,7 +202,8 @@
 						}, 0);
 					},
 			
-					editurl: $path_base+"/dummy.html",//nothing is saved
+					//editurl: $path_base+"/dummy.html",//nothing is saved
+					editurl: "/back/Order/del_order",
 					caption: "已完成订单",
 			
 			
@@ -353,6 +355,7 @@
 				}
 				
 				function beforeDeleteCallback(e) {
+					
 					var form = $(e[0]);
 					if(form.data('styled')) return false;
 					

@@ -5,6 +5,7 @@ use think\facade\Request;
 use think\Controller;
 use app\back\model\Category;
 use app\back\model\Goods;
+use think\Db;
 class Goodss extends Base
 {     
 	public $categor;
@@ -51,5 +52,14 @@ class Goodss extends Base
 		$goods->goods_img=$new_goods_img;
 		$goods->save();
 		return $this->goods_list();
+    }
+    function del_goods(){
+        $order_cn=Request::param('id');
+        $data=Db::table('Goods')->where('goods_id',$order_cn)->delete();
+         if(empty($data)){
+            return 0;
+        }else{
+           return $this->goods_list();
+        }
     }
 }

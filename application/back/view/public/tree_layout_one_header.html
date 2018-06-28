@@ -398,7 +398,7 @@
 										已完成订单
 									</a>
 								</li>
-                                <li <?php if(strpos($ddurl,'Order/unfilledorders')===0 || strpos($ddurl,'Order/deliveredorders')===0 ){?>class="active open"<?php }?>>
+                                <li <?php if(strpos($ddurl,'Order/unfilledorders')===0 || strpos($ddurl,'Order/deliveredorders')===0 || strpos($ddurl,'Order/offorder')===0){?>class="active open"<?php }?>>
 									<a href="#" class="dropdown-toggle">
 										<i class="icon-double-angle-right"></i>
 
@@ -407,18 +407,28 @@
 									</a>
 
 									<ul class="submenu">
-										<li <?php if($ddurl=='Order/unfilledorders'){?>class="active"<?php } ?>>
+										<li <?php if($ddurl==='Order/unfilledorders'){?>class="active"<?php } ?>>
 											<a href="/back/Order/unfilledorders">
 												<i class="icon-leaf"></i>
 												待发货订单
 											</a>
 										</li>
 
-										<li <?php if($ddurl=='Order/deliveredorders'){?>class="active"<?php } ?>>
+										<li <?php if($ddurl==='Order/deliveredorders'){?>class="active"<?php } ?>>
 											<a href="/back/Order/deliveredorders" class="dropdown-toggle">
 												<i class="icon-pencil"></i>
 
 												已发货订单
+												
+											</a>
+
+											
+										</li>
+										<li <?php if($ddurl=='Order/offorder'){?>class="active"<?php } ?>>
+											<a href="/back/Order/offorder" class="dropdown-toggle">
+												<i class="icon-pencil"></i>
+
+												用户取消订单
 												
 											</a>
 

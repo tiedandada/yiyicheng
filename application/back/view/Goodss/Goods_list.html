@@ -158,7 +158,7 @@
 					data: grid_data,
 					datatype: "local",
 					height: 250,
-					colNames:[' ', '商品名称','商品分类','商品价格'],
+					colNames:[' ','商品id','商品名称','商品分类','商品价格'],
 					colModel:[
 						{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
 							formatter:'actions', 
@@ -169,9 +169,10 @@
 								//editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
 							}
 						},
-						{name:'goods_name',index:'id', width:60, sorttype:"int", editable: true},
-						{name:'class_name',index:'sdate',width:90, editable:true, sorttype:"date",unformat: pickDate},
-						{name:'goods_price',index:'name', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}}
+						{name:'goods_id',index:'goods_id', width:60, sorttype:"int", editable: true,key:true},
+						{name:'goods_name',index:'goods_name', width:60, sorttype:"int", editable: true},
+						{name:'class_name',index:'class_name',width:90, editable:true, sorttype:"date",unformat: pickDate},
+						{name:'goods_price',index:'goods_price', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}}
 						
 						
 					], 
@@ -198,7 +199,7 @@
 						}, 0);
 					},
 			
-					editurl: $path_base+"/dummy.html",//nothing is saved
+					editurl: '/back/Goodss/del_goods',//nothing is saved
 					caption: "易易城全部商品展示",
 			
 			

@@ -1,6 +1,6 @@
 {layout name="goodstype_layout" /}
 							<li>
-								<a href="#">评论</a>
+								<a href="#">订单</a>
 							</li>
 							
 						</ul><!-- .breadcrumb -->
@@ -18,7 +18,7 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								商品评论
+								用户取消订单
 								<small>
 								
 									
@@ -160,7 +160,7 @@
 					data:grid_data,
 					datatype: "local",
 					height: 250,
-					colNames:[' ','评论id', '商品名称','用户名','评论内容', '评论时间'],
+					colNames:[' ', '订单编号','订单电话','订单金额', '下单用户', '收件人','下单时间'],
 					colModel:[
 						{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
 							formatter:'actions', 
@@ -171,13 +171,12 @@
 								//editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
 							}
 						},
-						// {name:'order_sn',index:'order_sn', width:70, sorttype:"int", editable: true,key:true},
-						{name:'comment_id',index:'comment_id', width:70, sorttype:"int", editable: true,key:true},
-						{name:'goods_name',index:'goods_name', width:70, sorttype:"int", editable: true},
-						{name:'user_name',index:'user_name',width:90, editable:true, sorttype:"date",unformat: pickDate},
-						{name:'comment_con',index:'comment_con', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
-						{name:'comment_time',index:'comment_time', width:70, editable: true,edittype:"checkbox",editoptions: {value:"Yes:No"},unformat: aceSwitch},
-						
+						{name:'order_sn',index:'order_sn', width:70, sorttype:"int", editable: true,key:true},
+						{name:'link_phone',index:'link_phone',width:90, editable:true, sorttype:"date",unformat: pickDate},
+						{name:'order_money',index:'order_money', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
+						{name:'user_name',index:'user_name', width:70, editable: true,edittype:"checkbox",editoptions: {value:"Yes:No"},unformat: aceSwitch},
+						{name:'link_man',index:'link_man', width:90, editable: true,edittype:"select",editoptions:{value:"FE:FedEx;IN:InTime;TN:TNT;AR:ARAMEX"}},
+						{name:'add_time',index:'add_time', width:150, sortable:false,editable: true,editype:"textarea", editoptions:{rows:"2",cols:"10"}} 
 					], 
 			
 					viewrecords : true,
@@ -202,8 +201,8 @@
 						}, 0);
 					},
 			
-					editurl: '/back/Messageman/del_goods',//nothing is saved
-					caption: "评论内容",
+					editurl: '/back/order/del_offoder',//nothing is saved
+					caption: "已取消订单",
 			
 			
 					autowidth: true

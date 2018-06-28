@@ -19,12 +19,17 @@ class Usera extends Base
      if($user=$request->param()){
         $user['user_name']=$request->param('user_name');
         $user['user_pwd']=$request->param('user_pwd'); 
-        $data = $this->newuser->selectname($user['user_name'])->toArray();
+        $data = $this->newuser->selectname($user['user_name']);
 //        print_r($data);
         if(empty($data)){
             return 0;die;                           //用户名不存在
         }else if($data['user_pwd']==$user['user_pwd']){
-          $bades= Session::set('name',$user['user_name']);                                //登录成功
+           $arr= $data->toArray();
+//           print_r($arr);
+//                echo $arr['user_name'];
+         $bades = Session::set('name',$arr['user_name']);                                //登录成功
+//         $name=Session::get('name');
+//         echo $name;
           return 2; 
         } else {
             return 1;die;                           //用户名或密码不正确 

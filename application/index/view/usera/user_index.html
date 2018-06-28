@@ -36,6 +36,7 @@
        
         $.post("/index/usera/user_index",{"user_name":username,"user_pwd":userpsw},
             function (data){ 
+                alert(data);
                 if(data==2){
                     location.href="/index/index/index";
                 }else if(data==0){

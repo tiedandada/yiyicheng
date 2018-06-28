@@ -25,13 +25,25 @@
     <script type="text/javascript" src="/front/js/tban.js"></script>
     
     <script type="text/javascript" src="/front/js/lrscroll_1.js"></script>
-
+    <script>
+        function sou(){
+            souindex=$('#text').val();
+            $.post('/index/index/souindex',{souindex:souindex},
+            function(data){
+                if(data==1){
+                    alert("暂无商品");
+                }else{
+                    alert("商品详情");
+                }
+            })
+        }
+    </script>
 <div class="top">
     <div class="logo"><a href="Index.html"><img src="/front/images/logo.png" /></a></div>
     <div class="search">
-    	<form>
-        	<input type="text" value="" class="s_ipt" />
-            <input type="submit" value="搜索" class="s_btn" />
+        <form action="/index/index/souindex" method="post">
+            <input type="text" value="" id="text" class="s_ipt" />
+                <input type="button" value="搜索" class="s_btn" onclick="sou()"/>
         </form>                      
         <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
     </div>

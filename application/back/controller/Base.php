@@ -17,7 +17,7 @@ class Base extends Controller
     	}else{
             
     		$this->ddurl=request()->controller() . '/' . request()->action();
-    		  
+    		  // echo $this->ddurl;die;
             $this->admin_name=Session::get('admin_name');
 
              }

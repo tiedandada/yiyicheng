@@ -29,12 +29,12 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 
-								<form class="form-horizontal" role="form">
+								<form class="form-horizontal" role="form" action="/back/Goodss/goods_add" method="post" enctype="multipart/form-data">
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品名称 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="例如：XX化妆品" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="例如：XX化妆品" class="col-xs-10 col-sm-5" name="goods_name" />
 										</div>
 									</div>
 									
@@ -47,10 +47,12 @@
 
 										<div class="col-sm-9">
 											
-											<select  id="form-field-2" class="col-xs-10 col-sm-5">
+											<select  id="form-field-2" class="col-xs-10 col-sm-5" name="goods_type">
 												<option value="">--请选择--</option>
-													<option value="">化妆品</option>
-													<option value="">化妆品</option>
+												{foreach $goodclass as $key=>$v}
+													<option value="{$v.class_id}">{$v.class_name}</option>
+													
+													{/foreach}
 											</select>
 										</div>
 									</div>
@@ -58,7 +60,7 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品价格 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="例如：187.45" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="例如：187.45" class="col-xs-10 col-sm-5" name="goods_price" />
 										</div>
 									</div>
 									<div class="space-4"></div>
@@ -67,14 +69,14 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品数量 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="例如：67" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="例如：67" class="col-xs-10 col-sm-5" name="goods_num" />
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品规格 </label>
 
 										<div class="col-sm-9">
-											<input type="text" id="form-field-1" placeholder="例如：500ml" class="col-xs-10 col-sm-5" />
+											<input type="text" id="form-field-1" placeholder="例如：500ml" class="col-xs-10 col-sm-5" name="goods_property" />
 										</div>
 									</div>
 									<div class="space-4"></div>
@@ -84,7 +86,7 @@
 
 										<div class="col-sm-9">
 											
-											<textarea class="form-control" id="form-field-8" placeholder="例如：天然橄榄油" style="width: 350px;"></textarea>
+											<textarea class="form-control" id="form-field-8" placeholder="例如：天然橄榄油" style="width: 350px;" name="goods_xq"></textarea>
 											<div class="space-2"></div>
 
 											<div class="help-block" id="input-size-slider"></div>
@@ -96,7 +98,7 @@
 
 										<div class="col-sm-9">
 											<div class="clearfix">
-												<input class="col-xs-1" type="file" id="form-field-5" placeholder="" />
+												<input class="col-xs-1" type="file" id="form-field-5" placeholder="" name="goods_img" />
 											</div>
 
 											<div class="space-2"></div>
@@ -114,7 +116,7 @@
 									
 									<div class="clearfix form-actions">
 										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button">
+											<button class="btn btn-info" type="submit">
 												<i class="icon-ok bigger-110"></i>
 												添加
 											</button>

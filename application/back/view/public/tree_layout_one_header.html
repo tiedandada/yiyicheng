@@ -363,23 +363,27 @@
 							<span class="btn btn-danger"></span>
 						</div>
 					</div><!-- #sidebar-shortcuts -->
-
+					
 					<ul class="nav nav-list">
-						<li class="active">
+						<!-- {eq $ddurl} -->
+						
+						<li <?php if($ddurl=='Index/index'){?>class="active"<?php } ?>>
+						
 							<a href="/back/Index/index">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 首页 </span>
 							</a>
 						</li>
 
-						<li>
+						<li <?php if($ddurl=='Updadminpwd/upd_admin_pwd'){?>class="active"<?php } ?>>
+
 							<a href='/back/Updadminpwd/upd_admin_pwd'>
 								<i class="icon-text-width"></i>
 								<span class="menu-text"> 修改密码 </span>
 							</a>
 						</li>
 
-						<li>
+						<li <?php if(strpos($ddurl,'Order') === 0){?>class="active open"<?php }?>>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
 								<span class="menu-text"> 订单管理 </span>
@@ -388,87 +392,44 @@
 							</a>
 
 							<ul class="submenu">
-								<li>
-									<a href="elements.html">
-										<i class="icon-double-angle-right"></i>
-										组件
+								<li <?php if($ddurl=='Order/comporder'){?>class="active"<?php } ?>>
+									<a href='/back/Order/comporder'>
+										
+										已完成订单
 									</a>
 								</li>
-
-								<li>
-									<a href="buttons.html">
-										<i class="icon-double-angle-right"></i>
-										按钮 &amp; 图表
-									</a>
-								</li>
-
-								<li>
-									<a href="treeview.html">
-										<i class="icon-double-angle-right"></i>
-										树菜单
-									</a>
-								</li>
-
-								<li>
-									<a href="jquery-ui.html">
-										<i class="icon-double-angle-right"></i>
-										jQuery UI
-									</a>
-								</li>
-
-								<li>
-									<a href="nestable-list.html">
-										<i class="icon-double-angle-right"></i>
-										可拖拽列表
-									</a>
-								</li>
-
-								<li>
+                                <li <?php if(strpos($ddurl,'Order/unfilledorders')===0 || strpos($ddurl,'Order/deliveredorders')===0 ){?>class="active open"<?php }?>>
 									<a href="#" class="dropdown-toggle">
 										<i class="icon-double-angle-right"></i>
 
-										三级菜单
+										未完成订单
 										<b class="arrow icon-angle-down"></b>
 									</a>
 
 									<ul class="submenu">
-										<li>
-											<a href="#">
+										<li <?php if($ddurl=='Order/unfilledorders'){?>class="active"<?php } ?>>
+											<a href="/back/Order/unfilledorders">
 												<i class="icon-leaf"></i>
-												第一级
+												待发货订单
 											</a>
 										</li>
 
-										<li>
-											<a href="#" class="dropdown-toggle">
+										<li <?php if($ddurl=='Order/deliveredorders'){?>class="active"<?php } ?>>
+											<a href="/back/Order/deliveredorders" class="dropdown-toggle">
 												<i class="icon-pencil"></i>
 
-												第四级
-												<b class="arrow icon-angle-down"></b>
+												已发货订单
+												
 											</a>
 
-											<ul class="submenu">
-												<li>
-													<a href="#">
-														<i class="icon-plus"></i>
-														添加产品
-													</a>
-												</li>
-
-												<li>
-													<a href="#">
-														<i class="icon-eye-open"></i>
-														查看商品
-													</a>
-												</li>
-											</ul>
+											
 										</li>
 									</ul>
 								</li>
 							</ul>
 						</li>
 
-						<li class="active open">
+						<li <?php if(strpos($ddurl,'Goodstype')===0 ){?>class="active open"<?php }?>>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-list"></i>
 								<span class="menu-text"> 商品分类 </span>
@@ -477,14 +438,14 @@
 							</a>
 
 							<ul class="submenu">
-								<li>
+								<li <?php if($ddurl=='Goodstype/add_goods_type'){?>class="active"<?php } ?>>
 									<a href="/back/Goodstype/add_goods_type">
 										<i class="icon-double-angle-right"></i>
 										添加商品分类
 									</a>
 								</li>
 
-								<li>
+								<li <?php if($ddurl=='Goodstype/del_goods_type'){?>class="active"<?php } ?>>
 									<a href="/back/Goodstype/del_goods_type">
 										<i class="icon-double-angle-right"></i>
 										删除商品分类
@@ -492,8 +453,10 @@
 								</li>
 							</ul>
 						</li>
+						
+						
 
-						<li>
+						<li <?php if(strpos($ddurl,'Goodss')===0 ){?>class="active open"<?php }?>>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-edit"></i>
 								<span class="menu-text"> 商品操作 </span>
@@ -502,31 +465,22 @@
 							</a>
 
 							<ul class="submenu">
-								<li>
-									<a href="/back/Goods/add_goods">
+								<li <?php if($ddurl=='Goodss/add_goods'){?>class="active"<?php } ?>>
+									<a href="/back/Goodss/add_goods">
 										<i class="icon-double-angle-right"></i>
 										添加商品
 									</a>
 								</li>
 
-							
-
-								<li>
-									<a href="/back/Goods/goods_list">
+							<li <?php if($ddurl=='Goodss/goods_list'){?>class="active"<?php } ?>>
+									<a href="/back/Goodss/goods_list">
 										<i class="icon-double-angle-right"></i>
 										商品列表
 									</a>
 								</li>
-
-								
-							</ul>
+                              </ul>
 						</li>
-						
-
-
-
-
-						<li>
+						<li <?php if(strpos($ddurl,'Messageman')===0){?>class="active open"<?php }?>>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-list-alt"></i>
 								<span class="menu-text"> 留言管理 </span>
@@ -535,48 +489,15 @@
 							</a>
 
 							<ul class="submenu">
-								<li>
-									<a href="/back/Goods/add_goods">
+								<li <?php if($ddurl=='Messageman/message_list'){?>class="active"<?php } ?>>
+									<a href="/back/Messageman/message_list">
 										<i class="icon-double-angle-right"></i>
-										添加商品
+										留言列表
 									</a>
 								</li>
-
-							
-
-								<li>
-									<a href="/back/Goods/goods_list">
-										<i class="icon-double-angle-right"></i>
-										商品列表
-									</a>
-								</li>
-
-								
-							</ul>
+                           </ul>
 						</li>
-
-
-
-
 						
-
-					
-
-						<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-tag"></i>
-								<span class="menu-text"> 更多页面 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="profile.html">
-										<i class="icon-double-angle-right"></i>
-										管理员信息
-									</a>
-								</li>
                              </ul>
 						</li>
 

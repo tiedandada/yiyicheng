@@ -13,7 +13,7 @@ class User extends Model
        
     }
     function selecomment(){
-    	return $this->join('comment','user.user_id=comment.user_id')->select()->count('comment.comment_id');
-       
+    	return $this->join('comment','user.user_id=comment.user_id')->select()->count('comment.comment_id');       
     }
+   
 }

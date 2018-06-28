@@ -41,14 +41,11 @@
 															</label>
 														</th>
 														<th>商品类名称</th>
-														<th>商品属性</th>
-														<th class="hidden-480">商品价格</th>
+														
+														
 
-														<th>
-															<i class="icon-time bigger-110 hidden-480"></i>
-															库存
-														</th>
-														<th class="hidden-480">Status</th>
+														
+														<th class="hidden-480">操作</th>
 														
 
 														<th></th>
@@ -68,13 +65,11 @@
 														<td>
 															<a href="#">{$v.class_name}</a>
 														</td>
-														<td>{$v.goods_property}</td>
-														<td class="hidden-480">{$v.goods_price}</td>
-														<td>{$v.goods_num}</td>
+														
+														
+														
 
-														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
-														</td>
+													
 
 														<td>
                                                                                                                    
@@ -87,7 +82,7 @@
 																	<i class="icon-edit bigger-120"></i>
 																</button>
 
-																<button class="btn btn-xs btn-danger" onclick="return cash({$v.goods_id});">
+																<button class="btn btn-xs btn-danger" onclick="cash({$v.class_id});">
 																	<i class="icon-trash bigger-120"></i>
 																</button>
 
@@ -295,11 +290,13 @@
 				}
 			})
                         function cash(id){
-                           
-                            $.get('/back/goodstype/updel_goods_type',{id:id},
+                          
+                            $.get('/back/Goodstype/updel_goods_type',{id:id},
                             function (data){
                                  if(data==1){
-                                    alert("删除成功");
+                                    alert('删除成功');location.href='/back/Goodstype/del_goods_type';
+                                 }else{
+                                 	alert('删除失败');location.href='/back/Goodstype/del_goods_type';
                                  }
                             })
                             return false;

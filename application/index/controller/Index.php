@@ -9,12 +9,13 @@ class Index extends Base
     public function index()
          
     {
+            
         if(empty(Session::get('name'))){
         $bades="您好游客,请登录";
     } else {
-        $bades="你好".Session::get('name');
+        $bades=Session::get('name');
     }
-      return $this->fetch('index',['header'=> $this->header(),'two'=> $this->shoppingtwo()->toArray(),'one'=> $this->shoppingone()->toArray(),'three'=> $this->shoppingthree()->toArray(),'fouraa'=> $this->shoppingfour()->toArray(),'five'=> $this->shoppingfive()->toArray(),'six'=> $this->shoppingsix()->toArray(),'bades'=>$bades]);   //往header传值
+      return $this->fetch('index',['header'=> $this->header(),'two'=> $this->shoppingtwo(),'one'=> $this->shoppingone()->toArray(),'three'=> $this->shoppingthree(),'fouraa'=> $this->shoppingfour(),'five'=> $this->shoppingfive(),'six'=> $this->shoppingsix(),'bades'=>$bades]);   //往header传值
 
     }
     public function souindex(Request $request){
@@ -31,6 +32,7 @@ class Index extends Base
            return 0;die;
        }
     }
+
     
 
 

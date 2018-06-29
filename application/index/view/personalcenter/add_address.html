@@ -1,0 +1,57 @@
+{layout name="member_layout" /}
+<script type="text/javascript" src="/front/js/sjld.js"></script>
+	<div class="m_right">
+            <p></p>
+            <div class="mem_tit">添加收货地址</div>
+            <form action="/index/Personalcenter/add_address" method="POST">
+            <table border="0" class="add_tab" style="width:930px;"  cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="135" align="right">配送地区</td>
+                <td colspan="3" style="font-family:'宋体';">
+                	  <select id="province" runat="server" name="province">
+                            </select>
+                            <select id="city" runat="server" name="city">
+                            </select>
+                            <select id="county" runat="server" name="contry">
+                            </select>
+<!--                            js初始化函数-->
+                            <script type="text/javascript">
+                              setup()
+                            </script>
+                    </select>
+                    （必填）
+                </td>
+              </tr>
+              <tr>
+                <td align="right">收货人姓名</td>
+                <td style="font-family:'宋体';"><input type="text" value="" class="add_ipt" name="link_man"/>（必填）</td>
+                <td align="right">联系电话</td>
+                <td style="font-family:'宋体';"><input type="text" value="" class="add_ipt" name="link_phone"/>（必填）</td>
+              </tr>
+              <tr>
+                <td align="right">详细地址</td>
+                <td style="font-family:'宋体';"><input type="text" value="" class="add_ipt" name="sit"/>（必填）</td>
+                <td align="right">邮政编码</td>
+                <td style="font-family:'宋体';"><input type="text" value="" class="add_ipt" name="email" /></td>
+              </tr>
+
+
+            </table>
+            
+           	<p align="right">
+            	<input  type="submit" class="btn" value="确认添加">
+            </p> 
+           </form>
+        </div>
+    </div>
+	<!--End 用户中心 End--> 
+    <!--Begin Footer Begin -->
+    
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>

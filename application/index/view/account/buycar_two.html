@@ -1,0 +1,175 @@
+{layout name="buy_carlayout" /}
+<!--End Menu End--> 
+<form  type="hidden" action='{gt name="total_price" value="0"}/index/Orderlay/confirm_order{/gt}' method="post"  >
+    <div class="i_bg">  
+        <div class="content mar_20">
+            <img src="/front/images/img2.jpg" />        
+        </div>
+
+        <!--Begin 第二步：确认订单信息 Begin -->
+        <div class="content mar_20">
+            <div class="two_bg">
+                    <div class="two_t">
+                        <span class="fr"><a href="/index/goods_car/buycar">修改</a></span>商品列表
+                    </div>
+                <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="car_th" width="550">商品名称</td>
+                        <td class="car_th" width="140">属性</td>
+                        <td class="car_th" width="150">购买数量</td>
+                        <td class="car_th" width="130">单价</td>
+                        <td class="car_th" width="130">小计</td>
+                    </tr>
+
+                    {foreach $goods_list as $k=>$v}
+                        <tr class="car_tr">
+                            <td>
+                                <div class="c_s_img">
+        `                           <img src="{$v.goods_img}" width="73" height="73" />
+                                </div>
+                              {$v.goods_name}
+                            </td>
+                            <td align="center">颜色：灰色</td>
+                            <td align="center">{$v.s}</td>
+                            <td align="center">{$v.goods_price}</td>
+                            <td align="center" style="color:#ff4e00;">{$v.s *$v.goods_price}</td>
+                        </tr>
+                    {/foreach}
+                    <tr>
+                      <td colspan="5" align="right" style="font-family:'Microsoft YaHei';">
+                          商品总价：{$total_price}
+                      </td>
+                    </tr>
+                </table>
+
+                <div class="two_t">
+                    <span class="fr"><a href="#">修改</a></span>收货人信息
+                </div>
+                <input  name='address_id' value="{$address.address_id}" type="hidden" />
+                <table border="0" class="peo_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+
+                    <tr>
+                        <td class="p_td" width="160">联系人</td>
+                        <td width="395">{$address['link_man']}</td>
+                        <td class="p_td" width="160">用户邮箱</td>
+                        <td width="395">{$address['email']}</td>
+                    </tr>
+
+                    <tr>
+                        
+                        <td class="p_td">详细地址</td>
+                        <td>{$address['address_name']}</td>
+                        <td class="p_td">联系电话</td>
+                        <td>{$address['link_phone']}</td>
+                    </tr>
+
+                </table>
+
+
+                <div class="two_t">
+                    配送方式
+                </div>
+                <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="car_th" width="80"></td>
+                    <td class="car_th" width="200">名称</td>
+                    <td class="car_th" width="370">订购描述</td>
+                    <td class="car_th" width="150">费用</td>
+                    <td class="car_th" width="135">免费额度</td>
+                    <td class="car_th" width="175">保价费用</td>
+                  </tr>
+                  <tr>
+                    <td align="center"><input type="checkbox" name="ch" checked="checked" /></td>
+                    <td align="center" style="font-size:14px;"><b>申通快递</b></td>
+                    <td>江、浙、沪地区首重为15元/KG，其他地区18元/KG，续重均为5-6元/KG， 云南地区为8元</td>
+                    <td align="center">￥15.00</td>
+                    <td align="center">￥0.00</td>
+                    <td align="center">不支持保价</td>
+                  </tr>
+                  <tr>
+                    <td align="center"><input type="checkbox" name="ch" /></td>
+                    <td align="center" style="font-size:14px;"><b>城际快递</b></td>
+                    <td>运费固定</td>
+                    <td align="center">￥15.00</td>
+                    <td align="center">￥0.00</td>
+                    <td align="center">不支持保价</td>
+                  </tr>
+                  <tr>
+                    <td align="center"><input type="checkbox" name="ch" /></td>
+                    <td align="center" style="font-size:14px;"><b>邮局平邮</b></td>
+                    <td>运费固定</td>
+                    <td align="center">￥15.00</td>
+                    <td align="center">￥0.00</td>
+                    <td align="center">不支持保价</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6">
+                            <span class="fr"><label class="r_rad"><input type="checkbox" name="baojia" /></label><label class="r_txt">配送是否需要保价</label></span>
+                    </td>
+                  </tr>
+                </table> 
+
+                <div class="two_t">
+                    支付方式
+                </div>
+                <ul class="pay">
+                    <li class="checked">货到付款<div class="ch_img"></div></li>
+                    <li>微信支付<div class="ch_img"></div></li>
+                    <li>支付宝<div class="ch_img"></div></li>
+                </ul>
+
+
+
+                <div class="two_t">
+                    其他信息
+                </div>
+                <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+
+                  <tr valign="top">
+                    <td align="right" style="padding-right:0;"><b style="font-size:14px;">订单留言备注：</b></td>
+                    <td style="padding-left:0;"><textarea class="add_txt" style="width:860px; height:50px;"></textarea></td>
+                  </tr>
+                  <tr>
+                    <td align="right" style="padding-right:0;"><b style="font-size:14px;">缺货处理：</b></td>
+                    <td>
+                            <label class="r_rad"><input type="checkbox" name="none" checked="checked" /></label><label class="r_txt" style="margin-right:50px;">等待所有商品备齐后再发</label>
+                        <label class="r_rad"><input type="checkbox" name="none" /></label><label class="r_txt" style="margin-right:50px;">取下订单</label>
+                        <label class="r_rad"><input type="checkbox" name="none" /></label><label class="r_txt" style="margin-right:50px;">与店主协商</label>
+                    </td>
+                  </tr>
+                </table>
+
+                <table border="0" style="width:900px; margin-top:20px;" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="right">
+
+                        商品总价: <font color="#ff4e00">{$total_price}</font>  + 配送费用: <font color="#ff4e00">￥15.00</font>
+                    </td>
+                  </tr>
+                  <tr height="70">
+                    <td align="right">
+                            <b style="font-size:14px;">应付款金额：<span style="font-size:22px; color:#ff4e00;">{$total_price+15}</span></b>
+                    </td>
+                  </tr>
+                  <tr height="70">
+                      <td align="right"><button><img src="/front/images/btn_sure.gif" /></button></td>
+                  </tr>
+                </table>
+
+
+
+            </div>
+    </div>
+	<!--End 第二步：确认订单信息 End-->
+    </form>
+    
+    <!--Begin Footer Begin -->
+    
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>

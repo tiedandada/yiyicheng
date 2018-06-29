@@ -1,0 +1,106 @@
+{layout name="member_layout" /}
+<script>
+   function change_phone(){
+       alert(1);
+            var phone = $('#phone').val();//获取表单里值  
+             
+            $.get("/index/Personalcenter/change_phone",{phone:phone},function(data){
+                 if(data==1){
+                        alert(更改成功);
+                    }else{
+                        alert(更改失败);
+                    }
+
+     });
+       
+   
+   }
+
+   
+</script>
+
+
+		<div class="m_right">
+            <p></p>
+            <div class="mem_tit">账户安全</div>
+            <div class="m_des">
+                <form action="/index/Personalcenter/change_phone" method="POST">  
+                <table border="0" style="width:880px;"  cellspacing="0" cellpadding="0">
+                  <tr height="45">
+                    <td width="80" align="right">原手机 &nbsp; &nbsp;</td>
+                    <td><input type="text" value="{$aa['user_phone']}" class="add_ipt" style="width:180px;"  />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="45">
+                    <td align="right">新手机 &nbsp; &nbsp;</td>
+                    <td><input type="text" name="phone" value="" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="50">
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="确认修改" class="btn_tj" /></td>
+                  </tr>
+                </table>
+                </form>
+            </div>
+            
+            <div class="m_des">
+                <form action="/index/Personalcenter/change_mailbox" method="POST">
+                <table border="0" style="width:880px;"  cellspacing="0" cellpadding="0">
+                  <tr height="45">
+                    <td width="80" align="right">原邮箱 &nbsp; &nbsp;</td>
+                    <td><input type="text" value="{$aa['user_email']}" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="45">
+                    <td align="right">新邮箱 &nbsp; &nbsp;</td>
+                    <td><input type="text"  name="email"  value="" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="50">
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="确认修改" class="btn_tj" /></td>
+                  </tr>
+                </table>
+                </form>
+            </div>
+            
+            <div class="m_des">
+                <form>
+                <table border="0" style="width:880px;"  cellspacing="0" cellpadding="0">
+                  <tr height="45">
+                    <td width="80" align="right">原密码 &nbsp; &nbsp;</td>
+                    <td><input type="password" value="" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="45">
+                    <td align="right">新密码 &nbsp; &nbsp;</td>
+                    <td><input type="password" value="" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="45">
+                    <td align="right">确认密码 &nbsp; &nbsp;</td>
+                    <td><input type="password" value="" class="add_ipt" style="width:180px;" />&nbsp; <font color="#ff4e00">*</font></td>
+                  </tr>
+                  <tr height="50">
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="确认修改" class="btn_tj" /></td>
+                  </tr>
+                </table>
+                </form>
+            </div>
+
+
+
+
+
+
+
+            
+        </div>
+    </div>
+	<!--End 用户中心 End--> 
+    <!--Begin Footer Begin -->
+   
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>

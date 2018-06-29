@@ -27,6 +27,7 @@ class Usera extends Base
            $arr= $data->toArray();
 //           print_r($arr);
 //                echo $arr['user_name'];
+         Session::set('user_id',$arr['user_id']);   
          $bades = Session::set('name',$arr['user_name']);                                //登录成功
 //         $name=Session::get('name');
 //         echo $name;
@@ -36,7 +37,7 @@ class Usera extends Base
         }
      } else {
          $bades="你好游客";
-          return $this->fetch('user_index',['bades'=>$bades]);
+          return $this->fetch('user_index',['bades'=>$bades,'header'=> $this->header()]);
      }
     
 }
@@ -45,8 +46,9 @@ class Usera extends Base
            $user['pwd']= $request->param('pwd');
            $user['email']= $request->param('email');
            $user['phone']= $request->param('phone');
+           $user['img']='/front/a_close.png';
            if(!empty($user['name']) && !empty($user['pwd']) && !empty($user['email']) && !empty($user['phone'])){
-         $this->newuser->insertuser($user['name'],$user['pwd'],$user['email'],$user['phone']);
+         $this->newuser->insertuser($user['name'],$user['pwd'],$user['email'],$user['phone'],$user['img']);
          return 5;
         }
         if(empty($user['name'])){
@@ -61,7 +63,7 @@ class Usera extends Base
         $this->toregister();
     }
     public function toregister(){
-        return $this->fetch("/usera/user_register");
+        return $this->fetch("/usera/user_register",['header'=> $this->header()]);
     }
     public function user_stutes(Request $request){
         $data=$request->param();
@@ -90,6 +92,6 @@ class Usera extends Base
     }
     public function touser_stutes(){
         
-        return $this->fetch('user_stutes');
+        return $this->fetch('user_stutes',['header'=> $this->header()]);
     }
 }

@@ -15,6 +15,17 @@ function clearnick(id){
     
 }
 
+
+function checkCar(){
+    var zj = $('#zj').text();
+    if(zj>0){
+        window.location.replace("/index/account/confirm_settle");
+    }else{
+        alert('请添加商品');
+    }
+}
+
+
     
 </script>
 <!--End Menu End--> 
@@ -58,14 +69,18 @@ function clearnick(id){
             <td colspan="6" style="font-family:'Microsoft YaHei'; border-bottom:0;">
             	<label class="r_rad"><input type="checkbox" name="clear" checked="checked" /></label><label class="r_txt">清空购物车</label>
                 
-                <span class="fr">商品总价：<b style="font-size:22px; color:#ff4e00;">{$zj}</b></span>
+
+                <span class="fr">商品总价：<b style="font-size:22px; color:#ff4e00;" id="zj">{$zj}</b></span>
+
                 
             </td>
           </tr>
           
           <tr valign="top" height="150">
           	<td colspan="6" align="right">
-            	<a href="/index/index/index"><img src="/front/images/buy1.gif" /></a>&nbsp; &nbsp; <a href="/index/account/confirm_settle"><img src="/front/images/buy2.gif" /></a>
+
+                    <a href="/index/index/index"><img src="/front/images/buy1.gif" /></a>&nbsp; &nbsp; <a href='{gt name="zj" value="0"}/index/account/confirm_settle{/gt}'><img src="/front/images/buy2.gif" /></a>
+
             </td>
           </tr>
         </table>

@@ -116,7 +116,12 @@
         <!--End 所在收货地区 End-->
         <span class="fr">
 
-        	<span class="fl"><a href="/index/usera/user_index">{$bades}</a>&nbsp; <a href="/index/usera/toregister" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">
+                你好<a href="/index/usera/user_index">
+                       <?php if(Session::get('name')==''){?>请登录
+                       <?php }else{ echo Session::get('name');?><?php } ?>
+               
+                    </a>&nbsp; <a href="/index/usera/toregister" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/index/Personalcenter/my_order">个人中心</a>&nbsp;|</span>
 
         	<span class="ss">
             	<div class="ss_list">

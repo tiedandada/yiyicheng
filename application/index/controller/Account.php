@@ -5,8 +5,8 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 use think\Db;
-
-class Account extends Controller
+use think\facade\Session;
+class Account extends Base
 {
  
     public function index()
@@ -15,7 +15,8 @@ class Account extends Controller
     }
 
     public function confirm_settle(){
-        $user_id=1;//在$_SESSION中调用这个方法读取用户的id 根据用户id查询购物车表中的数据遍历出来
+        $user_id=Session::get('user_id');//在$_SESSION中调用这个方法读取用户的id 根据用户id查询购物车表中的数据遍历出来
+//        echo $user_id;die;
         //查询购物车商品列表
         $goods_list = Db::table('car')
                 ->join('goods','car.goods_id=goods.goods_id')
@@ -32,11 +33,13 @@ class Account extends Controller
             $total_price += $v['s']*$v['goods_price'];
         }
    
-        $address = Db::table('address')->where('user_id',$user_id)->find();
+
+        $address = Db::table('address')->where(['user_id'=>$user_id,'is_defauit'=>1])->find();
+
 
                
    
-        return $this->fetch('buycar_two',['goods_list'=>$goods_list,'total_price'=>$total_price,'address'=>$address]);
+        return $this->fetch('buycar_two',['goods_list'=>$goods_list,'total_price'=>$total_price,'address'=>$address,'header'=> $this->header()]);
     }
 
 

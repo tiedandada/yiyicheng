@@ -12,12 +12,13 @@ class User extends Model
     public function selectname($username){
         return $user = User::where('user_name', $username)->find();
     }
-    public function insertuser($name,$pwd,$email,$phone){
+    public function insertuser($name,$pwd,$email,$phone,$img){
         $user = new User;
         $user->user_name = $name;
         $user->user_pwd = $pwd;
         $user->user_email = $email;
         $user->user_phone = $phone;
+        $user->user_img = $img;
         $user->save();
     }
     

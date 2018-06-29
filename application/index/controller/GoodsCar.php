@@ -5,8 +5,8 @@ namespace app\index\controller;
 use think\Controller;
 use think\facade\Request;
 use think\Db;
-
-class GoodsCar extends Controller
+use think\facade\Session;
+class GoodsCar extends Base
 {      
 
     
@@ -15,7 +15,7 @@ class GoodsCar extends Controller
     // 如果小于则添加失败 提示用户商品不足
     public function rece_good(Request $request){
       
-        $user_id=1;//定义用户id为1  整合时改成 $_SESSIO读取 判断 如果$_SESSIO有读取用户id 如果没有跳转到登录界面进行登录
+        $user_id=Session::get('user_id');//定义用户id为1  整合时改成 $_SESSIO读取 判断 如果$_SESSIO有读取用户id 如果没有跳转到登录界面进行登录
         $goods_id=Request::param('id');//商品id
         
             
@@ -59,7 +59,7 @@ class GoodsCar extends Controller
     //查看购物车
     public function buycar(){
          
-        $user_id=1;//在$_SESSION中调用这个方法读取用户的id 根据id查询购物车表
+        $user_id=Session::get('user_id');//在$_SESSION中调用这个方法读取用户的id 根据id查询购物车表
         
         $data=Db::table('car')
                 ->join('goods','car.goods_id=goods.goods_id')
@@ -76,12 +76,12 @@ class GoodsCar extends Controller
             $zj+= $v['goods_num']*$v['goods_price'];
         }   
         
-        return $this->fetch('buycar',['key'=>$data,'zj'=>$zj]);
+        return $this->fetch('buycar',['key'=>$data,'zj'=>$zj,'header'=> $this->header()]);
                 
  }
          
     public function delete_goods(Request $request){
-        $user_id=1;//用户id
+        $user_id=Session::get('user_id');//用户id
         $goods_id=Request::param('id');//商品id
         $data =Db::table('car')->where(['user_id'=>$user_id,'goods_id'=>$goods_id])->delete();
         if($data){

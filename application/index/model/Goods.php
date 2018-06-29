@@ -3,11 +3,13 @@
 namespace app\index\model;
 
 use think\Model;
+//use think\Db;
 
 class Goods extends Model
 {
-    public function timeshopping(){
-         return Goods::where('goods_time','2018-06-14 04:08:04')->select();
+    public function goods_id($id){
+        
+    return $this->where('goods_id',$id)->find();  
+    
     }
-   
 }

@@ -1,0 +1,114 @@
+{layout name="member_layout" /}
+<script type="text/javascript" src="/front/js/jquery-1.8.2.min.js"></script>
+<script>
+
+        function confirmgoods(order_id){
+               $.get("/index/Personalcenter/affirm",{order_id:order_id},function(data){
+                            if(data==1){
+                               alert('确认成功') 
+                               window.location.reload()//刷新当前页面
+                             //  window.location.href = "/index/Personalcenter/my_order";
+                            }else{
+                                alert('失败');
+                            }
+                        });
+
+        }  
+
+        function delorder(order_id){
+             $.get("/index/Personalcenter/cancel",{order_id:order_id},function(data){
+                            if(data==1){
+
+                               alert('取消成功') 
+                               window.location.reload()//刷新当前页面
+                             // window.location.href = "/index/Personalcenter/my_order";
+
+                            }else{
+                                alert('取消失败');
+                            }
+                        });
+
+        }
+    
+
+
+</script>
+		<div class="m_right"  id="kd" width="1000" >
+            <p></p>
+            <div class="mem_tit">我的订单</div>
+           
+
+            <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+             
+                <td width="20%">订单号:<span id='orderid' >{$goods_order['order_sn']}</span></td>
+                <td width="25%">下单时间<span>:{$goods_order['add_time']}</span></td>
+                <td width="15%">订单总金额<span>:{$goods_order['order_money']}</span></td>
+                <td width="25%">订单状态
+                    <span>:
+                        {if ($goods_order['order_state']==0)}待发货
+                        {elseif $goods_order['order_state'] == 1 /}已发货
+                        {elseif $goods_order['order_state'] == 2 /}订单已取消
+                        {else /} 订单已完成
+                        {/if}
+                    
+                    </span></td>
+                <tr><td width="25%">收货人<span>:{$goods_order['link_man']}</span></td><td width="25%">收货地址<span>:吉林</span></ta></tr>
+               
+               
+              <tr>
+                <td class="car_th" width="550">商品名称</td>
+                <td class="car_th" width="140">单价</td>
+                <td class="car_th" width="150">购买数量</td>
+                <td class="car_th" width="130">小计</td>
+                <td class="car_th" width="140">返还积分</td>
+              </tr>
+              {foreach $goods_details as $k=>$v}
+              <tr>
+                <td>
+                    <div class="c_s_img"><img src="{$v.goods_img}" width="73" height="73" /></div>
+                   {$v.goods_name}
+                </td>
+                <td align="center">{$v.goods_price}</td>
+                <td align="center">{$v.buy_num}</td>
+                <td align="center" style="color:#ff4e00;">{$v.buy_num * $v.goods_price}</td>
+  
+              </tr>
+              {/foreach}
+              <tr>
+                <td colspan="4" align="right" style="font-family:'Microsoft YaHei';">
+                 商品总价:{$goods_order['order_money']}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4" align="right" style="font-family:'Microsoft YaHei';">
+                    
+                        {if ($goods_order['order_state']==0)}<input type="button" value='取消订单' onclick="delorder({$goods_details[0]['order_id']});">
+                        {elseif $goods_order['order_state'] == 1 /}
+                        <input  type="button" value='确认收货' onclick="confirmgoods({$goods_details[0]['order_id']});">
+                        <input type="button" value='取消订单' onclick="delorder({$goods_details[0]['order_id']});">
+                        {elseif $goods_order['order_state'] == 2 /}<a href="/index/index/index"><input type="button" value='继续购物'"></a>
+                        {else /}<a href="/index/index/index"><input type="button" value='继续购物'"></a>
+                        {/if}
+                 
+                 
+                </td>
+              </tr>
+              
+            </table>
+
+
+            
+        </div>
+    
+	<!--End 用户中心 End--> 
+    <!--Begin Footer Begin -->
+    
+
+</body>
+
+
+<!--[if IE 6]>
+<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+</html>
+
